@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brisa Nosareña Travel</title>
+<style>
+:root{--bg:#f6fbfc;--surface:#ffffff;--card:#e4f3f8;--ink:#12365c;--muted:#4b6a85;--accent:#1f9fae;--brand:#124a7e;--onbrand:#fff;--line:#cfe5ec;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1a2a;--surface:#102338;--card:#16314a;--ink:#e6f2f8;--muted:#9fb8cb;--accent:#4cc3d0;--brand:#1d6aa8;--line:#244560;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b1a2a;--surface:#102338;--card:#16314a;--ink:#e6f2f8;--muted:#9fb8cb;--accent:#4cc3d0;--brand:#1d6aa8;--line:#244560;color-scheme:dark}
+.view{display:none}.view.active{display:block}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55}
+a{color:inherit}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--brand);color:var(--onbrand)}
+.bar{max-width:1080px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+.logo{font-weight:700;letter-spacing:.04em;text-decoration:none}
+nav a{color:var(--onbrand);text-decoration:none;margin-left:18px;font-size:.95rem;opacity:.92}
+nav a:hover{opacity:1;text-decoration:underline}
+#menu{display:none;background:none;border:1px solid #fff8;color:#fff;border-radius:8px;padding:6px 10px;font-size:1rem}
+@media(max-width:720px){#menu{display:block}nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--brand);padding:8px 20px 16px}nav.open{display:flex;flex-direction:column}nav a{margin:10px 0}}
+.hero{background:linear-gradient(180deg,#8fd3e6 0%,#f7d9a8 55%,#f2b277 100%);text-align:center;padding:90px 20px 110px;color:#0e2f52}
+.hero h1{font-size:clamp(2.2rem,7vw,4rem);margin:0 0 6px;font-family:Georgia,serif;font-style:italic}
+.hero p{font-size:1.2rem;margin:8px 0 26px}
+.btn{display:inline-block;background:var(--brand);color:#fff;border:0;border-radius:999px;padding:12px 26px;font-size:1rem;cursor:pointer;text-decoration:none}
+.btn:hover{filter:brightness(1.12)}
+section{max-width:1080px;margin:auto;padding:56px 20px}
+h2{font-family:Georgia,serif;font-size:2rem;margin:0 0 8px;color:var(--ink)}
+.sub{color:var(--muted);margin:0 0 28px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px}
+.pkg h3{margin:0 0 2px}.pkg .d{color:var(--accent);font-weight:600}
+.pkg ul{padding-left:18px;color:var(--muted)}
+.price{font-size:1.8rem;font-weight:700}.price small{font-size:.8rem;font-weight:400;color:var(--muted)}
+.ico{font-size:1.8rem}
+.note{font-size:.85rem;color:var(--muted);margin-top:14px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tab{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 18px;cursor:pointer;font-size:.95rem}
+.tab[aria-selected="true"]{background:var(--brand);color:#fff;border-color:var(--brand)}
+.alt{background:var(--card)}
+.beaches{display:flex;flex-wrap:wrap;gap:10px;padding:0;list-style:none}
+.beaches li{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 16px}
+form{display:grid;gap:12px;max-width:560px}
+label{font-size:.9rem;color:var(--muted)}
+input,select,textarea{width:100%;padding:11px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
+.ok{color:var(--accent);min-height:1.4em}
+footer{background:var(--brand);color:#fff;text-align:center;padding:30px 20px calc(30px + env(safe-area-inset-bottom,0px))}
+footer p{margin:4px 0}
+</style>
+</head>
+<body>
+<header><div class="bar">
+<a class="logo" href="#inicio">🌴 BRISA NOSAREÑA TRAVEL</a>
+<button id="menu" aria-label="Menú">☰</button>
+<nav id="nav"><a href="#inicio">Inicio</a><a href="#nosara">Nosara</a><a href="#paquetes">Paquetes</a><a href="#servicios">Servicios</a><a href="#itinerario">Itinerario</a><a href="#reservas">Reservas</a></nav>
+</div></header>
+
+<div class="view" id="v-inicio"><div class="hero">
+<h1>Brisa Nosareña</h1>
+<p>Viví la costa a tu manera</p>
+<a class="btn" href="#paquetes">Ver paquetes</a>
+</div></div>
+
+<div class="view" id="v-nosara"><section id="nosara">
+<h2>Nuestra esencia: Nosara</h2>
+<p class="sub">Un pequeño paraíso en Guanacaste, conocido por sus playas, sus aguas cristalinas, su ambiente de conexión y su gran naturaleza. Aquí podés disfrutar de la playa, el surf, la vida silvestre y una comunidad que te hace sentir como en casa.</p>
+<h3>Playas principales</h3>
+<ul class="beaches"><li>Playa Guiones</li><li>Playa Pelada</li><li>Playa Nosara</li><li>Playa Ostional</li></ul>
+</section></div>
+
+<div class="view" id="v-paquetes"><div class="alt"><section id="paquetes">
+<h2>Paquetes turísticos</h2>
+<p class="sub">Elegí la experiencia que mejor se adapte a vos.</p>
+<div class="grid">
+<div class="card pkg"><h3>Escapada Costera</h3><div class="d">3 días / 2 noches</div><ul><li>Hospedaje</li><li>Desayunos</li><li>Tour a Playa Guiones</li></ul><div class="price"><small>Desde</small> $450 <small>por persona</small></div><p><button class="btn" data-pkg="Escapada Costera">Reservar</button></p></div>
+<div class="card pkg"><h3>Surf y Bienestar</h3><div class="d">4 días / 3 noches</div><ul><li>Hospedaje</li><li>Clases de surf</li><li>Sesiones de yoga</li></ul><div class="price"><small>Desde</small> $650 <small>por persona</small></div><p><button class="btn" data-pkg="Surf y Bienestar">Reservar</button></p></div>
+<div class="card pkg"><h3>Naturaleza Local</h3><div class="d">5 días / 4 noches</div><ul><li>Hospedaje</li><li>Tour a Ostional (tortugas)</li><li>Manglares y naturaleza</li></ul><div class="price"><small>Desde</small> $850 <small>por persona</small></div><p><button class="btn" data-pkg="Naturaleza Local">Reservar</button></p></div>
+</div>
+<p class="note">*Precios de referencia, pueden variar según la temporada.</p>
+</section></div></div>
+
+<div class="view" id="v-servicios"><section id="servicios">
+<h2>Nuestros servicios</h2>
+<p class="sub">Todo lo que necesitás para disfrutar Nosara.</p>
+<div class="grid">
+<div class="card"><div class="ico">🛏️</div><b>Hospedaje</b><p>En hoteles, villas y eco-lodges.</p></div>
+<div class="card"><div class="ico">🏄</div><b>Clases de surf</b><p>Para todos los niveles.</p></div>
+<div class="card"><div class="ico">🧘</div><b>Bienestar y yoga</b><p>Actividades de bienestar y yoga.</p></div>
+<div class="card"><div class="ico">🔭</div><b>Tours guiados</b><p>Avistamiento de fauna, manglares, volcanes y más.</p></div>
+<div class="card"><div class="ico">🚐</div><b>Transporte</b><p>Seguro y cómodo desde y hacia el aeropuerto.</p></div>
+</div>
+</section></div>
+
+<div class="view" id="v-itinerario"><div class="alt"><section id="itinerario">
+<h2>Itinerario de 4 días</h2>
+<p class="sub">Un ejemplo de cómo podría ser tu viaje.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="card" id="dia" aria-live="polite"></div>
+</section></div></div>
+
+<div class="view" id="v-reservas"><section id="reservas">
+<h2>Contacto y reservaciones</h2>
+<p class="sub">Completá el formulario y te escribimos por WhatsApp para confirmar tu reserva.</p>
+<form id="f">
+<div><label for="n">Nombre</label><input id="n" required></div>
+<div><label for="p">Paquete</label><select id="p"><option>Escapada Costera</option><option>Surf y Bienestar</option><option>Naturaleza Local</option></select></div>
+<div><label for="g">Personas</label><input id="g" type="number" min="1" value="2" required></div>
+<div><label for="fe">Fecha aproximada</label><input id="fe" type="date"></div>
+<div><label for="m">Mensaje</label><textarea id="m" rows="3"></textarea></div>
+<button class="btn" type="submit">Enviar por WhatsApp</button>
+<div class="ok" id="ok"></div>
+</form>
+</section></div>
+
+<footer>
+<p><b>Brisa Nosareña Travel</b></p>
+<p>📍 Nosara, Guanacaste, Costa Rica</p>
+<p>📱 WhatsApp: <a href="https://wa.me/50688881234">+506 8888 1234</a></p>
+<p>✉️ <a href="mailto:brisanosarena@gmail.com">brisanosarena@gmail.com</a> · 📷 <a href="https://instagram.com/brisanosarena">@brisanosarena</a></p>
+<p><i>Más que un destino, una experiencia.</i></p>
+<p style="font-size:.85rem;opacity:.85">Respetá la naturaleza, no dejés basura, protegé la vida marina y apoyá a la comunidad local.</p>
+</footer>
+
+<script>
+var dias=[
+["Día 1","✈️ Llegada a Nosara","Check-in en el hospedaje y tarde libre en la playa."],
+["Día 2","🏄 Surf en Playa Guiones","Clases de surf por la mañana y tarde libre para disfrutar del pueblo."],
+["Día 3","🌿 Naturaleza y aventura","Tour a manglares, caminata o visita a Ostional (según temporada)."],
+["Día 4","☀️ Despedida","Desayuno y tiempo libre para compras con un último baño en el mar."]];
+var tabs=document.getElementById("tabs"),box=document.getElementById("dia");
+function show(i){
+  [].forEach.call(tabs.children,function(b,j){b.setAttribute("aria-selected",j===i)});
+  box.innerHTML="<h3 style='margin-top:0'>"+dias[i][1]+"</h3><p style='margin-bottom:0'>"+dias[i][2]+"</p>";
+}
+dias.forEach(function(d,i){
+  var b=document.createElement("button");b.className="tab";b.setAttribute("role","tab");b.textContent=d[0];
+  b.onclick=function(){show(i)};tabs.appendChild(b);
+});
+show(0);
+var nav=document.getElementById("nav");
+document.getElementById("menu").onclick=function(){nav.classList.toggle("open")};
+nav.onclick=function(){nav.classList.remove("open")};
+var pages=["inicio","nosara","paquetes","servicios","itinerario","reservas"];
+function route(){
+  var h=(location.hash||"#inicio").slice(1);
+  if(pages.indexOf(h)<0)h="inicio";
+  pages.forEach(function(x){document.getElementById("v-"+x).classList.toggle("active",x===h)});
+  [].forEach.call(nav.children,function(a){a.style.fontWeight=a.getAttribute("href")==="#"+h?"700":"400"});
+  window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);route();
+[].forEach.call(document.querySelectorAll("[data-pkg]"),function(b){
+  b.onclick=function(){document.getElementById("p").value=b.dataset.pkg;location.hash="reservas"};
+});
+document.getElementById("f").onsubmit=function(e){
+  e.preventDefault();
+  var t="Hola, quiero reservar el paquete "+p.value+" para "+g.value+" persona(s)."+
+    (fe.value?" Fecha aproximada: "+fe.value+".":"")+" Mi nombre es "+n.value+"."+(m.value?" "+m.value:"");
+  document.getElementById("ok").textContent="Abriendo WhatsApp…";
+  window.open("https://wa.me/50688881234?text="+encodeURIComponent(t),"_blank");
+};
+</script>
+</body>
+</html>
